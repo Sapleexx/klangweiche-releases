@@ -18,7 +18,8 @@ Klangweiche sitzt unauffällig im Infobereich und stellt das Standard-Audiogerä
 - **Lautstärke und Pegel** – alle Geräte mit Lautstärkeregler, Stummschaltung und Live-Pegel in einem Fenster.
 - **Kommandozeile** – `klangweiche switch`, `mute`, `profile`, `status` und mehr, für Skripte und Stream-Decks. `klangweiche help` zeigt alle Befehle.
 - **Hell und dunkel, Deutsch und Englisch** – richtet sich nach dem System oder nach dir.
-- **Hält sich selbst aktuell** – Klangweiche sucht hier nach neuen Versionen und aktualisiert sich auf Knopfdruck. Abschaltbar.
+- **Sichern und mitnehmen** – alle Einstellungen in eine Datei sichern und auf einem anderen Rechner wiederherstellen.
+- **Hält sich selbst aktuell** – Klangweiche sucht hier nach neuen Versionen, zeigt, was neu ist, und aktualisiert sich auf Knopfdruck. Abschaltbar.
 
 | Benachrichtigungen | Profile |
 | --- | --- |
@@ -43,14 +44,14 @@ cd klangweiche
 sh install.sh
 ```
 
-Danach steht „Klangweiche“ im Anwendungsmenü. Gebraucht werden `pactl` (Paket `pulseaudio-utils`), `notify-send` (`libnotify`) und für Updates `curl`. Das Symbol in der Leiste zeigt KDE direkt an; GNOME braucht die Erweiterung *AppIndicator*.
+Danach steht „Klangweiche“ im Anwendungsmenü. Entfernen geht mit `uninstall.sh` aus demselben Paket. Gebraucht werden `pactl` und `parec` (Paket `pulseaudio-utils`), `notify-send` (`libnotify`) und für Updates `curl`. Das Symbol in der Leiste zeigt KDE direkt an; GNOME braucht die Erweiterung *AppIndicator*.
 
 <details>
 <summary>Was unter Linux anders ist</summary>
 
-- Globale Tastenkürzel gibt es unter Wayland nicht. Lege stattdessen in den Systemeinstellungen ein eigenes Tastenkürzel mit einem Befehl an, zum Beispiel `klangweiche switch --type Playback` oder `klangweiche mute --toggle`.
+- Globale Tastenkürzel laufen über den Tastenkürzel-Dienst des Desktops (KDE Plasma 6, GNOME 48 und neuer; noch experimentell). Wo es den nicht gibt, lege in den Systemeinstellungen ein eigenes Tastenkürzel mit einem Befehl an, zum Beispiel `klangweiche switch --type Playback` oder `klangweiche mute --toggle`.
 - Profile, die auf das Programm im Vordergrund reagieren, greifen nicht – Linux verrät das anderen Programmen nicht.
-- Keine Pegelanzeige; Meldungen kommen als normale Desktop-Benachrichtigung.
+- Meldungen kommen als normale Desktop-Benachrichtigung.
 - App-Regeln verschieben den Ton von Programmen, die gerade etwas abspielen.
 
 </details>
